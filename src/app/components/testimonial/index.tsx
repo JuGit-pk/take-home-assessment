@@ -1,5 +1,6 @@
 "use client"
 import React from "react"
+import { motion, AnimatePresence } from "framer-motion"
 import { ITestimonial, TestimonialCard } from "./testimonial-card"
 
 const testimonials: ITestimonial[] = [
