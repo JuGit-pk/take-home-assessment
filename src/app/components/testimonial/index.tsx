@@ -1,6 +1,6 @@
 "use client"
 import React from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion } from "framer-motion"
 import { ITestimonial, TestimonialCard } from "./testimonial-card"
 
 const testimonials: ITestimonial[] = [
@@ -41,24 +41,40 @@ const TestimonialsSection = () => {
       </div>
 
       <div className="relative overflow-hidden">
-        <div className="flex items-start gap-[25px] mb-3">
-          {[...testimonials].map((testimonial, index) => (
+        {/* Animated Marquee Row */}
+        <motion.div
+          className="flex items-start gap-[25px] mb-3 w-fit"
+          animate={{ x: ["0%", "-100%"] }}
+          transition={{
+            duration: 40,
+            ease: "linear",
+            repeat: Infinity,
+          }}
+          whileHover={{ animationPlayState: "paused" }}
+        >
+          {[...testimonials, ...testimonials].map((testimonial, index) => (
             <TestimonialCard
-              key={`row-testimonial-${index}`}
+              key={`marquee-testimonial-${index}`}
               testimonial={testimonial}
             />
           ))}
-        </div>
-      </div>
-      <div className="relative overflow-hidden">
-        <div className="flex items-start gap-[25px]  -translate-x-[240px]">
-          {[...testimonials].map((testimonial, index) => (
+        </motion.div>
+        <motion.div
+          className="flex items-start gap-[25px] mb-3 w-fit"
+          animate={{ x: ["0%", "-100%"] }}
+          transition={{
+            duration: 30,
+            ease: "linear",
+            repeat: Infinity,
+          }}
+        >
+          {[...testimonials, ...testimonials].map((testimonial, index) => (
             <TestimonialCard
-              key={`row-testimonial-${index}`}
+              key={`marquee-faster-testimonial-${index}`}
               testimonial={testimonial}
             />
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   )
