@@ -1,35 +1,9 @@
 "use client"
-import React from "react"
-import { motion } from "framer-motion"
-import { ITestimonial, TestimonialCard } from "./testimonial-card"
 
-const testimonials: ITestimonial[] = [
-  {
-    name: "David Cohe",
-    text: "Surmount is truly changing the game. Really easy to use. Logan and the team are doing great work to make wealth building more accessible to anyone.",
-    strategies: ["Strategy 1", "Strategy 2"],
-  },
-  {
-    name: "David Cohe",
-    text: "The product is awesome! I have only ever known buy and hold to be my strategy and Surmount has opened up an entire new world of investing for me. My Robinhood account is doing better than it would be if it was still just me managing it.",
-    strategies: ["Strategy 1", "Strategy 2"],
-  },
-  {
-    name: "David Cohe",
-    text: "Surmount is truly changing the game. Really easy to use. Logan and the team are doing great work to make wealth building more accessible to anyone.",
-    strategies: ["Strategy 1", "Strategy 2"],
-  },
-  {
-    name: "David Cohe",
-    text: "As a former quant, I was excited to use a platform that Logan and the team have built to bring the power of professional family offices to everyday investors. After a year of due diligence, I found more in Surmount than I ever could on my own.",
-    strategies: ["Strategy 1", "Strategy 2"],
-  },
-  {
-    name: "David Cohe",
-    text: "When I saw the amazing team and the edge funds and the founders. As I dug into it I was even more to impress",
-    strategies: ["Strategy 1", "Strategy 2"],
-  },
-]
+import { motion } from "framer-motion"
+
+import { TestimonialCard } from "./testimonial-card"
+import { TESTIMONIALS } from "@/data"
 
 const TestimonialsSection = () => {
   return (
@@ -52,7 +26,7 @@ const TestimonialsSection = () => {
           }}
           whileHover={{ animationPlayState: "paused" }}
         >
-          {[...testimonials, ...testimonials].map((testimonial, index) => (
+          {[...TESTIMONIALS, ...TESTIMONIALS].map((testimonial, index) => (
             <TestimonialCard
               key={`marquee-testimonial-${index}`}
               testimonial={testimonial}
@@ -68,7 +42,7 @@ const TestimonialsSection = () => {
             repeat: Infinity,
           }}
         >
-          {[...testimonials, ...testimonials].map((testimonial, index) => (
+          {[...TESTIMONIALS, ...TESTIMONIALS].map((testimonial, index) => (
             <TestimonialCard
               key={`marquee-faster-testimonial-${index}`}
               testimonial={testimonial}

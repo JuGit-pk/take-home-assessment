@@ -1,13 +1,8 @@
 "use client"
-import { Icon } from "@/app/components/icon"
-import React from "react"
 
-const features = [
-  "Unlimited Connected Broker Accounts",
-  "Unlimited Paper Accounts",
-  "Unlimited Automated Trading on Paper Accounts",
-  "Unlimited ETF Strategy Creation / Backtesting",
-]
+import { Icon } from "@/icon"
+import { PRICING_FREE_PLAN_FEATURES } from "@/data"
+
 // TODO: need font aenonik 500 and 600 and make it pixel perfect
 const FreePlanCard = () => {
   return (
@@ -39,7 +34,7 @@ const FreePlanCard = () => {
           intelligence.
         </p>
         <ul className="text-base space-y-2.5 -ml-2">
-          {features.map((feature) => (
+          {PRICING_FREE_PLAN_FEATURES.map((feature) => (
             <li key={feature} className="flex items-start">
               <Icon.checkOutlineIcon className="mr-2 flex-shrink-0" />{" "}
               <span>{feature}</span>

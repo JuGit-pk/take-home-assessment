@@ -1,23 +1,5 @@
-import { AwardItem, IAwards } from "./award"
-
-const awards: IAwards[] = [
-  {
-    src: "/awards/best-natural-language-23.svg",
-    alt: "Best Natural Language 23",
-  },
-  {
-    src: "/awards/best-trading-application-23.svg",
-    alt: "Best Investment Platform 23",
-  },
-  {
-    src: "/awards/best-trading-application-24.svg",
-    alt: "Best Investment Platform 24",
-  },
-  {
-    src: "/awards/best-trading-sol-provider-23.svg",
-    alt: "Best Trading Sol Provider 23",
-  },
-]
+import { AWARDS } from "@/data"
+import { AwardItem } from "./award"
 
 const AwardsSection = () => {
   return (
@@ -36,7 +18,7 @@ const AwardsSection = () => {
 
         {/* Right column: Awards grid */}
         <div className="max-w-[487px] w-full grid grid-cols-2 gap-14">
-          {awards.map((award, index) => (
+          {AWARDS.map((award, index) => (
             <AwardItem
               key={award.src + index}
               src={award.src}

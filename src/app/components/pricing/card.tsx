@@ -1,7 +1,6 @@
 "use client"
-import { Icon } from "@/app/components/icon"
-import React from "react"
 
+import { Icon } from "@/icon"
 interface IProps {
   plan: IPlan
 }

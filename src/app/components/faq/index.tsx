@@ -1,4 +1,3 @@
-import React from "react"
 import Accordian from "./accordian"
 
 const FAQ = () => {

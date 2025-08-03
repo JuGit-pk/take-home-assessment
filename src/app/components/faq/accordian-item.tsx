@@ -1,8 +1,9 @@
 "use client"
 import { cn } from "@/app/utils"
 import React, { useState } from "react"
-import { Icon } from "../icon"
+
 import { motion, AnimatePresence } from "framer-motion"
+import { Icon } from "@/icon"
 
 const AccordianItem = ({ qna }: { qna: { q: string; a: string } }) => {
   const [isOpen, setIsOpen] = useState(false)
